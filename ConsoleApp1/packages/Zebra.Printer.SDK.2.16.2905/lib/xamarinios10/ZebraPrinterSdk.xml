@@ -1,0 +1,878 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ZebraPrinterSdk</name>
+    </assembly>
+    <members>
+        <member name="T:Zebra.Sdk.Graphics.Shared.IZebraImageFactory">
+            <summary>
+            A factory interface used to acquire a cross platform instance of ZebraImageI.
+            </summary>
+        </member>
+        <member name="M:Zebra.Sdk.Graphics.Shared.IZebraImageFactory.GetImage(System.String)">
+            <summary>
+            Creates an instance of <see cref="T:Zebra.Sdk.Graphics.ZebraImageI"/> from the image specified in <c>fullPath</c>.
+            </summary>
+            <param name="fullPath">The full path of the image.</param>
+            <returns>An image formatted for Zebra Printers</returns>
+            <exception cref="T:System.IO.IOException">If the file could not be found, open, or is an unsupported graphic.</exception>
+            <exception cref="T:System.ArgumentException">If <c>fullPath</c> is null.</exception>
+        </member>
+        <member name="M:Zebra.Sdk.Graphics.Shared.IZebraImageFactory.GetImage(System.Byte[])">
+            <summary>
+            Creates an instance of <see cref="T:Zebra.Sdk.Graphics.ZebraImageI"/> from the image data specified in <c>imageData</c>.
+            </summary>
+            <param name="imageData">A byte[] containing the image data.</param>
+            <returns>An image formatted for Zebra Printers.</returns>
+            <exception cref="T:System.IO.IOException">If the file could not be found, open, or is an unsupported graphic.</exception>
+            <exception cref="T:System.ArgumentException">If <c>imageData</c> is null.</exception>
+        </member>
+        <member name="M:Zebra.Sdk.Graphics.Shared.IZebraImageFactory.GetImage(System.IO.Stream)">
+            <summary>
+            Creates an instance of <see cref="T:Zebra.Sdk.Graphics.ZebraImageI"/> from the image data specified in <c>imageData</c>.
+            </summary>
+            <param name="imageData">A stream containing the image data.</param>
+            <returns>An image formatted for Zebra Printers.</returns>
+            <exception cref="T:System.IO.IOException">If the file could not be found, open, or is an unsupported graphic.</exception>
+            <exception cref="T:System.ArgumentException">If <c>imageData</c> is null.</exception>
+        </member>
+        <member name="T:Zebra.Sdk.Graphics.Shared.ZebraImageFactory">
+            <summary>
+            A factory used to acquire an instance of ZebraImageI.
+            </summary>
+        </member>
+        <member name="P:Zebra.Sdk.Graphics.Shared.ZebraImageFactory.Current">
+            <summary>
+            Current IZebraPrinterFactory to use
+            </summary>
+        </member>
+        <member name="M:Zebra.Sdk.Graphics.Internal.PngToGrfConverter.PngToGrf(System.IO.Stream)">
+            <summary>
+            </summary>
+            <param name="pngData"></param>
+            <returns></returns>
+            <exception cref="T:System.IO.IOException"></exception>
+        </member>
+        <member name="M:Zebra.Sdk.Graphics.Internal.ZebraImage.#ctor(Zebra.Drawing.Image)">
+            <summary>
+            For internal use of the Zebra Printer API only.
+            </summary>
+            <param name="image"></param>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="M:Zebra.Sdk.Graphics.Internal.ZebraImage.#ctor(System.String)">
+            <summary>
+            For internal use of the Zebra Printer API only.
+            </summary>
+            <param name="imageFilePath"></param>
+            <exception cref="T:System.ArgumentException"></exception>
+            <exception cref="T:System.IO.IOException"></exception>
+        </member>
+        <member name="M:Zebra.Sdk.Graphics.Internal.ZebraImage.#ctor(System.IO.Stream)">
+            <summary>
+            For internal use of the Zebra Printer API only.
+            </summary>
+            <param name="imageStream"></param>
+            <exception cref="T:System.ArgumentException"></exception>
+            <exception cref="T:System.IO.IOException"></exception>
+        </member>
+        <member name="T:Zebra.Sdk.Graphics.ZebraImageFactory">
+            <summary>
+            A factory used to acquire an instance of a ZebraImageI.
+            </summary>
+        </member>
+        <member name="M:Zebra.Sdk.Graphics.ZebraImageFactory.GetImage(System.String)">
+            <summary>
+            Creates an instance of <see cref="T:Zebra.Sdk.Graphics.ZebraImageI"/> from the image specified in <c>fullPath</c>.
+            </summary>
+            <param name="fullPath">The full path of the image.</param>
+            <returns>An image formatted for Zebra Printers</returns>
+            <exception cref="T:System.IO.IOException">If the file could not be found, open, or is an unsupported graphic.</exception>
+            <exception cref="T:System.ArgumentException">If <c>fullPath</c> is null</exception>
+        </member>
+        <member name="M:Zebra.Sdk.Graphics.ZebraImageFactory.GetImage(System.IO.Stream)">
+            <summary>
+            Creates an instance of <see cref="T:Zebra.Sdk.Graphics.ZebraImageI"/> from the image data specified in <c>imageData</c>
+            </summary>
+            <param name="imageData">A stream containing the image data.</param>
+            <returns>An image formatted for Zebra Printers.</returns>
+            <exception cref="T:System.IO.IOException">If the file could not be found, open, or is an unsupported graphic.</exception>
+            <exception cref="T:System.ArgumentException">If <c>imageData</c> is null</exception>
+        </member>
+        <member name="M:Zebra.Sdk.Comm.Internal.BluetoothHelper.ConvertMacAddressToUlong(System.String)">
+            <summary>
+            </summary>
+            <param name="macAddress"></param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="M:Zebra.Sdk.Comm.Internal.BluetoothConnectionReestablisher.ReestablishConnection(Zebra.Sdk.Printer.PrinterReconnectionHandler)">
+            <see cref="M:Zebra.Sdk.Comm.ConnectionReestablisher.ReestablishConnection(Zebra.Sdk.Printer.PrinterReconnectionHandler)"/> 
+        </member>
+        <member name="M:Zebra.Sdk.Comm.Internal.ZebraBluetoothSocket.OutputStream.Write(System.Byte[])">
+            <exception cref="T:System.IO.IOException"></exception>
+        </member>
+        <member name="T:Zebra.Sdk.Comm.BluetoothConnection">
+            <summary>
+            Establishes a Bluetooth&#174; connection to a printer
+            </summary>
+            <remarks>
+            In order to connect to a device with Bluetooth&#174;, the device must be discoverable, authentication must be enabled,
+            and the authentication pin must be set (1-16 alphanumeric characters).<br/>
+            The encryption type and whether or not it is used is determined by the device initiating the connection and not
+            device being connected to.
+            </remarks>
+            <example>Desktop<code source="../SdkApi_Test/Test/Zebra/Sdk/Comm/Examples/BluetoothConnectionExample.cs"/></example>
+            <example>Android&#8482;<code source="../XamarinSdk/XamarinTest/XamarinTest.Android/Test/Zebra/Sdk/Comm/Examples/BluetoothConnectionExample.cs"/></example>
+            <example>iOS<code source="../XamarinSdk/XamarinTest/XamarinTest.iOS/Test/Zebra/Sdk/Comm/Examples/BluetoothConnectionExample.cs"/></example>
+        </member>
+        <member name="F:Zebra.Sdk.Comm.BluetoothConnection.friendlyName">
+            <summary>
+            For internal use of the Zebra Printer API only.
+            </summary>
+        </member>
+        <member name="F:Zebra.Sdk.Comm.BluetoothConnection.macAddress">
+            <summary>
+            For internal use of the Zebra Printer API only.
+            </summary>
+        </member>
+        <member name="P:Zebra.Sdk.Comm.BluetoothConnection.TimeToWaitBeforeClose">
+            <summary>
+            Gets/sets the time to wait before closing the connection (milliseconds).
+            </summary>
+        </member>
+        <member name="M:Zebra.Sdk.Comm.BluetoothConnection.#ctor">
+            <summary>
+            For internal use of the Zebra Printer API only.
+            </summary>
+        </member>
+        <member name="M:Zebra.Sdk.Comm.BluetoothConnection.#ctor(Zebra.Sdk.Comm.Internal.ConnectionInfo)">
+            <summary>
+            For internal use of the Zebra Printer API only.
+            </summary>
+            <param name="connectionInfo"></param>
+            <exception cref="T:Zebra.Sdk.Comm.NotMyConnectionDataException">For internal use of the Zebra Printer API only.</exception>
+        </member>
+        <member name="M:Zebra.Sdk.Comm.BluetoothConnection.#ctor(System.String)">
+            <summary>
+            Constructs a new Bluetooth&#174; connection with the given <c>macAddress</c>.
+            </summary>
+            <remarks>
+            The MAC address is a hexadecimal string with or without separators between the octets. (e.g. 00:11:BB:DD:55:FF or 0011BBDD55FF). 
+            This constructor will use the default timeouts for <see cref="M:Zebra.Sdk.Comm.Connection.Read"/>. The default timeout is a maximum of 10
+            seconds for any data to be received. If no more data is available after 500 milliseconds the read operation is
+            assumed to be complete.<br/>
+            To specify timeouts other than the defaults, use:<br/>
+            <see cref="M:Zebra.Sdk.Comm.BluetoothConnection.#ctor(System.String,System.Int32,System.Int32)"/>
+            </remarks>
+            <param name="macAddress">the device's MAC address.</param>
+        </member>
+        <member name="M:Zebra.Sdk.Comm.BluetoothConnection.#ctor(System.String,System.Int32,System.Int32)">
+            <summary>
+            Constructs a new Bluetooth&#174; connection with the given<c>macAddress</c> and timeout values.
+            </summary>
+            <remarks>
+            The MAC address is a hexadecimal string with or without separators between the octets. (e.g. 00:11:BB:DD:55:FF or
+            0011BBDD55FF). This constructor will use the specified timeouts for <see cref = "M:Zebra.Sdk.Comm.Connection.Read" />.The timeout is a
+            maximum of<c> maxTimeoutForRead</c> milliseconds for any data to be received.If no more data is available
+            after <c>timeToWaitForMoreData</c> milliseconds the read operation is assumed to be complete.
+            </remarks>
+            <param name="macAddress">the device's MAC address.</param>
+            <param name="maxTimeoutForRead">the maximum time, in milliseconds, to wait for any data to be received.</param>
+            <param name="timeToWaitForMoreData">the maximum time, in milliseconds, to wait in-between reads after the initial read.</param>
+        </member>
+        <member name="M:Zebra.Sdk.Comm.BluetoothConnection.#ctor(Zebra.Sdk.Comm.Internal.ZebraConnector,System.String,System.Int32,System.Int32)">
+            <summary>
+            Exposed this protected constructor for testing. We can pass in a mock Connector rather than the BT specific one.
+            The MAC address is a hexadecimal string with no separators between the octets. (e.g. 0011BBDD55FF).
+            </summary>
+            <param name="zebraConnector"></param>
+            <param name="macAddress"></param>
+            <param name="maxTimeoutForRead"></param>
+            <param name="timeToWaitForMoreData"></param>
+        </member>
+        <member name="M:Zebra.Sdk.Comm.BluetoothConnection.Close">
+            <summary>
+            Closes the Bluetooth&#174; connection.
+            </summary>
+            <see cref="M:Zebra.Sdk.Comm.Connection.Close"/> 
+        </member>
+        <member name="M:Zebra.Sdk.Comm.BluetoothConnection.ToString">
+            <summary>
+            The friendly name is obtained from the device when this connection is opened. If the friendly name changes on the
+            device, it will not be refreshed until the connection is closed and reopened.
+            </summary>
+            <returns><c>Bluetooth</c>:[MAC Address]:[Friendly Name].</returns>
+            <see cref="M:Zebra.Sdk.Comm.Connection.ToString"/>
+        </member>
+        <member name="P:Zebra.Sdk.Comm.BluetoothConnection.SimpleConnectionName">
+            <summary>
+            Gets the MAC address and the friendly name as the description.
+            </summary>
+            <returns>[MAC Address]:[Friendly Name]</returns>
+            <see cref="P:Zebra.Sdk.Comm.Connection.SimpleConnectionName"/> 
+        </member>
+        <member name="P:Zebra.Sdk.Comm.BluetoothConnection.MACAddress">
+            <summary>
+            Gets the MAC address which was passed into the constructor. The MAC address is a hexadecimal string with
+            separators between the octets. (e.g. 00:11:BB:DD:55:FF).
+            </summary>
+        </member>
+        <member name="P:Zebra.Sdk.Comm.BluetoothConnection.FriendlyName">
+            <summary>
+            Gets the friendly name of the Bluetooth&#174; connection. The friendly name is obtained from the device when
+            this connection is opened.If the friendly name changes on the device, it will not be refreshed until the
+            connection is closed and reopened.
+            </summary>
+        </member>
+        <member name="M:Zebra.Sdk.Comm.BluetoothConnection.GetConnectionReestablisher(System.Int64)">
+            <inheritdoc cref="M:Zebra.Sdk.Comm.Connection.GetConnectionReestablisher(System.Int64)"/> 
+        </member>
+        <member name="M:Zebra.Sdk.Comm.BluetoothConnection.ReadChar">
+            <inheritdoc/>
+        </member>
+        <member name="M:Zebra.Sdk.Comm.BluetoothConnection.BytesAvailable">
+            <inheritdoc cref="M:Zebra.Sdk.Comm.Connection.BytesAvailable"/> 
+        </member>
+        <member name="T:Zebra.Sdk.Comm.ConnectionBuilder">
+            <summary>
+      Builds a Connection from a description string. The description string is used to specify a connection to a specific
+      device over TCP or Bluetooth®.
+    </summary><remarks>
+      <para>
+        The description string may be of the explicit forms:<br /><br />
+        "TCP:192.168.1.4:6101" -- creates a TCP connection to the device with IP address 192.168.1.4 on port 6101.<br />
+        "TCP:192.168.1.4" -- creates a TCP connection to the device with IP address 192.168.1.4 on default port 9100.<br />
+        "TCP:dnsName:6101" -- creates a TCP connection to the device with 'dnsName' on port 6101.<br />
+        "TCP:dnsName" -- creates a TCP connection to the device with 'dnsName' on default port 9100.<br />
+        "TCP_MULTI:192.168.1.4" -- creates a Multichannel TCP connection to the device with '192.168.1.4' using the default ports for both the printing channel(9100) and the status channel(9200).<br />
+        "TCP_MULTI:192.168.1.4:1234" -- creates a Multichannel TCP connection to the device with '192.168.1.4' using the given port for the printing channel(1234) and the default port for the status channel(9200).<br />
+        "TCP_MULTI:192.168.1.4:1234:5678" -- creates a Multichannel TCP connection to the device with '192.168.1.4' using the given ports for the printing channel(1234) and the status channel(5678).<br />
+        "TCP_MULTI:dnsName:1234:5678" -- creates a Multichannel TCP connection to the device with 'dnsName' using the given ports for the printing channel(1234) and the status channel(5678).<br />
+        "TCP_STATUS:192.168.1.4:1234" -- creates a TCP status only connection to the device with IP address 192.168.1.4 on port 1234.<br />
+        "TCP_STATUS:192.168.1.4" -- creates a TCP status only connection to the device with IP address 192.168.1.4 on the default status port 9200.<br />
+        "BT:11:22:33:44:55:66" -- creates a Bluetooth® connection to the device using '11:22:33:44:55:66' as the MAC address.<br />
+      </para>
+      Generic text may also be used to attempt to specify a device. For example a description string of "genericText" will
+      attempt to connect to a device using the following priority:
+      <list type="bullet">
+        <item>
+          <description>TCP_MULTI</description>
+        </item>
+        <item>
+          <description>TCP</description>
+        </item>
+        <item>
+          <description>TCP_STATUS</description>
+        </item>
+        <item>
+          <description>BT</description>
+        </item>
+      </list>
+
+      If you supply the string '1FE533AA7B90'. This could be interpreted to be either a DNS name or a Bluetooth® MAC
+      address. ConnectionBuilder will attempt to connect to this string given the above priority order. If you supply a
+      more specific string, such as '192.168.2.3', ConnectionBuilder will more efficiently interpret this string as being
+      an IP address and, therefore, only attempt the TCP connections.<br />
+      The Bluetooth® Connection Building process will first attempt an insecure connection (no pairing required). This
+      requires the printer's 'bluetooth.minimum_security_mode' must be set to 1. If an insecure connection could not be
+      esablished, it will attempt to pair and connect securely. This will trigger the Android pairing request prompt.<br />
+      Note: Colon (':') characters are not supported in dnsName, friendlyName, uniqueId, deviceName, or genericText fields.<br /><br />
+      The following is an example of building a connection from a string.
+    </remarks><example>
+      Desktop
+      <code source="../SdkApi_Test/Test/Zebra/Sdk/Comm/Examples/ConnectionBuilderExample.cs" />
+    </example><example>
+      Android™
+      <code source="../XamarinSdk/XamarinTest/XamarinTest.Android/Test/Zebra/Sdk/Comm/Examples/ConnectionBuilderExample.cs" />
+    </example><example>
+      iOS
+      <code source="../XamarinSdk/XamarinTest/XamarinTest.iOS/Test/Zebra/Sdk/Comm/Examples/ConnectionBuilderExample.cs" />
+    </example>
+        </member>
+        <member name="M:Zebra.Sdk.Comm.ConnectionBuilder.#ctor">
+            <summary>
+            For internal use of the Zebra Printer API only.
+            </summary>
+        </member>
+        <member name="M:Zebra.Sdk.Comm.ConnectionBuilder.InitializeClasses">
+            <summary>
+            For internal use of the Zebra Printer API only.
+            </summary>
+        </member>
+        <member name="M:Zebra.Sdk.Comm.ConnectionBuilder.AddConnectionType(System.Object)">
+            <summary>
+            Add a connection type to the ConnectionBuilder.
+            </summary>
+            <param name="c">Connection class.</param>
+        </member>
+        <member name="M:Zebra.Sdk.Comm.ConnectionBuilder.Build(System.String)">
+            <summary>
+      Creates a Connection type based on the contents of <c>descriptionString</c>.
+    </summary><example>"TCP:192.168.1.2:9100"</example><param name="descriptionString">
+      The format of the input string is: [prefix:] address [: port_number(s)].<br /><br />
+      <ul>
+        <li>
+          Prefix is either TCP_MULTI, TCP, TCP_STATUS, BT_MULTI, BT, or BT_STATUS.
+        </li>
+        <li>
+          The format of address depends on the prefix
+          <ul>
+            <li>TCP : address is either a DNS name or an IPv4 address.</li>
+            <li>BT : address is the MAC address.</li>
+          </ul>
+        </li>
+        <li>port_number(s) is optional, and only applicable for TCP connections.</li>
+        <li>
+          Examples:
+          <ul>
+            <li>TCP:ZBR3054027:9100</li>
+            <li>TCP_MULTI:ZBR3054027:9100:9200</li>
+            <li>BT:11:22:33:44:55:66</li>
+            <li>10.1.2.3</li>
+          </ul>
+        </li>
+      </ul>
+    </param><returns>Connection derived from the contents of descriptionString.</returns><exception cref="T:Zebra.Sdk.Comm.ConnectionException">If a connection could not be established for the given descriptionString.</exception>
+        </member>
+        <member name="T:Zebra.Sdk.Printer.Discovery.BluetoothDiscoverer">
+            <summary>
+            A class that discovers Bluetooth&#174; devices.
+            </summary>
+            <example>Desktop<code source="../SdkApi_Test/Test/Zebra/Sdk/Discovery/Examples/BluetoothDiscovererExample.cs"/></example>
+            <example>Android<code source="../XamarinSdk/XamarinTest/XamarinTest.Android/Test/Zebra/Sdk/Discovery/Examples/BluetoothDiscovererExample.cs"/></example>
+            <example>iOS<code source="../XamarinSdk/XamarinTest/XamarinTest.iOS/Test/Zebra/Sdk/Discovery/Examples/BluetoothDiscovererExample.cs"/></example>
+        </member>
+        <member name="M:Zebra.Sdk.Printer.Discovery.BluetoothDiscoverer.FindPrinters(Zebra.Sdk.Printer.Discovery.DiscoveryHandler)">
+            <summary>
+            Find Bluetooth&#174; devices that are discoverable.
+            </summary>
+            <remarks>This method will return all devices found, not just Zebra printers.<br/>
+            This method should not be called from the application main thread.<br/>
+            Android 6 and higher (API 23+) requires user permission ACCESS_COARSE_LOCATION or ACCESS_FINE_LOCATION in your application manifest.</remarks>
+            <param name="discoveryHandler">A <see cref="T:Zebra.Sdk.Printer.Discovery.DiscoveryHandler"/> instance that is used to handle discovery events (e.g. found a printer, errors, discovery finished).</param>
+        </member>
+        <member name="T:Zebra.Sdk.Printer.Discovery.DiscoveredPrinterBluetooth">
+            <summary>
+            Instance of DiscoveredPrinter that is returned when performing a Bluetooth&#174; discovery.
+            </summary>
+        </member>
+        <member name="M:Zebra.Sdk.Printer.Discovery.DiscoveredPrinterBluetooth.#ctor(System.String,System.String)">
+            <summary>
+            Returns an instance of a DiscoveredPrinterBluetooth with <c>macAddress</c>.
+            </summary>
+            <param name="macAddress">MAC address of the printer.</param>
+            <param name="friendlyName">Friendly name of the printer.</param>
+        </member>
+        <member name="P:Zebra.Sdk.Printer.Discovery.DiscoveredPrinterBluetooth.FriendlyName">
+            <summary>
+            The friendly name of the Bluetooth&#174; device.
+            </summary>
+        </member>
+        <member name="M:Zebra.Sdk.Printer.Discovery.DiscoveredPrinterBluetooth.GetConnection">
+            <see cref="M:Zebra.Sdk.Printer.Discovery.DiscoveredPrinter.GetConnection"/> 
+        </member>
+        <member name="M:Zebra.Drawing.Bitmap.Clone(System.Drawing.Rectangle,System.Drawing.Imaging.PixelFormat)">
+            <summary>
+            Creates a copy of the section of this Bitmap defined by Rectangle structure and with a specified PixelFormat enumeration.
+            </summary>
+            <param name="rect">Rect.</param>
+            <param name="pixelFormat">Pixel format.</param>
+        </member>
+        <member name="T:Zebra.Drawing.Imaging.ColorMatrix">
+            <summary>
+            Defines a 5 x 5 matrix that contains the homogeneous coordinates for the RGBA space.
+            </summary>
+        </member>
+        <member name="M:Zebra.Drawing.Imaging.ColorMatrix.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref='T:Zebra.Drawing.Imaging.ColorMatrix'/> class.
+            </summary>
+        </member>
+        <member name="P:Zebra.Drawing.Imaging.ColorMatrix.Matrix00">
+            <summary>
+            Represents the element at the 0th row and 0th column of this <see cref='T:Zebra.Drawing.Imaging.ColorMatrix'/>.
+            </summary>
+        </member>
+        <member name="P:Zebra.Drawing.Imaging.ColorMatrix.Matrix01">
+            <summary>
+            Represents the element at the 0th row and 1st column of this <see cref='T:Zebra.Drawing.Imaging.ColorMatrix'/>.
+            </summary>
+        </member>
+        <member name="P:Zebra.Drawing.Imaging.ColorMatrix.Matrix02">
+            <summary>
+            Represents the element at the 0th row and 2nd column of this <see cref='T:Zebra.Drawing.Imaging.ColorMatrix'/>.
+            </summary>
+        </member>
+        <member name="P:Zebra.Drawing.Imaging.ColorMatrix.Matrix03">
+            <summary>
+            Represents the element at the 0th row and 3rd column of this <see cref='T:Zebra.Drawing.Imaging.ColorMatrix'/>.
+            </summary>
+        </member>
+        <member name="P:Zebra.Drawing.Imaging.ColorMatrix.Matrix04">
+            <summary>
+            Represents the element at the 0th row and 4th column of this <see cref='T:Zebra.Drawing.Imaging.ColorMatrix'/>.
+            </summary>
+        </member>
+        <member name="P:Zebra.Drawing.Imaging.ColorMatrix.Matrix10">
+            <summary>
+            Represents the element at the 1st row and 0th column of this <see cref='T:Zebra.Drawing.Imaging.ColorMatrix'/>.
+            </summary>
+        </member>
+        <member name="P:Zebra.Drawing.Imaging.ColorMatrix.Matrix11">
+            <summary>
+            Represents the element at the 1st row and 1st column of this <see cref='T:Zebra.Drawing.Imaging.ColorMatrix'/>.
+            </summary>
+        </member>
+        <member name="P:Zebra.Drawing.Imaging.ColorMatrix.Matrix12">
+            <summary>
+            Represents the element at the 1st row and 2nd column of this <see cref='T:Zebra.Drawing.Imaging.ColorMatrix'/>.
+            </summary>
+        </member>
+        <member name="P:Zebra.Drawing.Imaging.ColorMatrix.Matrix13">
+            <summary>
+            Represents the element at the 1st row and 3rd column of this <see cref='T:Zebra.Drawing.Imaging.ColorMatrix'/>.
+            </summary>
+        </member>
+        <member name="P:Zebra.Drawing.Imaging.ColorMatrix.Matrix14">
+            <summary>
+            Represents the element at the 1st row and 4th column of this <see cref='T:Zebra.Drawing.Imaging.ColorMatrix'/>.
+            </summary>
+        </member>
+        <member name="P:Zebra.Drawing.Imaging.ColorMatrix.Matrix20">
+            <summary>
+            Represents the element at the 2nd row and 0th column of this <see cref='T:Zebra.Drawing.Imaging.ColorMatrix'/>.
+            </summary>
+        </member>
+        <member name="P:Zebra.Drawing.Imaging.ColorMatrix.Matrix21">
+            <summary>
+            Represents the element at the 2nd row and 1st column of this <see cref='T:Zebra.Drawing.Imaging.ColorMatrix'/>.
+            </summary>
+        </member>
+        <member name="P:Zebra.Drawing.Imaging.ColorMatrix.Matrix22">
+            <summary>
+            Represents the element at the 2nd row and 2nd column of this <see cref='T:Zebra.Drawing.Imaging.ColorMatrix'/>.
+            </summary>
+        </member>
+        <member name="P:Zebra.Drawing.Imaging.ColorMatrix.Matrix23">
+            <summary>
+            Represents the element at the 2nd row and 3rd column of this <see cref='T:Zebra.Drawing.Imaging.ColorMatrix'/>.
+            </summary>
+        </member>
+        <member name="P:Zebra.Drawing.Imaging.ColorMatrix.Matrix24">
+            <summary>
+            Represents the element at the 2nd row and 4th column of this <see cref='T:Zebra.Drawing.Imaging.ColorMatrix'/>.
+            </summary>
+        </member>
+        <member name="P:Zebra.Drawing.Imaging.ColorMatrix.Matrix30">
+            <summary>
+            Represents the element at the 3rd row and 0th column of this <see cref='T:Zebra.Drawing.Imaging.ColorMatrix'/>.
+            </summary>
+        </member>
+        <member name="P:Zebra.Drawing.Imaging.ColorMatrix.Matrix31">
+            <summary>
+            Represents the element at the 3rd row and 1st column of this <see cref='T:Zebra.Drawing.Imaging.ColorMatrix'/>.
+            </summary>
+        </member>
+        <member name="P:Zebra.Drawing.Imaging.ColorMatrix.Matrix32">
+            <summary>
+            Represents the element at the 3rd row and 2nd column of this <see cref='T:Zebra.Drawing.Imaging.ColorMatrix'/>.
+            </summary>
+        </member>
+        <member name="P:Zebra.Drawing.Imaging.ColorMatrix.Matrix33">
+            <summary>
+            Represents the element at the 3rd row and 3rd column of this <see cref='T:Zebra.Drawing.Imaging.ColorMatrix'/>.
+            </summary>
+        </member>
+        <member name="P:Zebra.Drawing.Imaging.ColorMatrix.Matrix34">
+            <summary>
+            Represents the element at the 3rd row and 4th column of this <see cref='T:Zebra.Drawing.Imaging.ColorMatrix'/>.
+            </summary>
+        </member>
+        <member name="P:Zebra.Drawing.Imaging.ColorMatrix.Matrix40">
+            <summary>
+            Represents the element at the 4th row and 0th column of this <see cref='T:Zebra.Drawing.Imaging.ColorMatrix'/>.
+            </summary>
+        </member>
+        <member name="P:Zebra.Drawing.Imaging.ColorMatrix.Matrix41">
+            <summary>
+            Represents the element at the 4th row and 1st column of this <see cref='T:Zebra.Drawing.Imaging.ColorMatrix'/>.
+            </summary>
+        </member>
+        <member name="P:Zebra.Drawing.Imaging.ColorMatrix.Matrix42">
+            <summary>
+            Represents the element at the 4th row and 2nd column of this <see cref='T:Zebra.Drawing.Imaging.ColorMatrix'/>.
+            </summary>
+        </member>
+        <member name="P:Zebra.Drawing.Imaging.ColorMatrix.Matrix43">
+            <summary>
+            Represents the element at the 4th row and 3rd column of this <see cref='T:Zebra.Drawing.Imaging.ColorMatrix'/>.
+            </summary>
+        </member>
+        <member name="P:Zebra.Drawing.Imaging.ColorMatrix.Matrix44">
+            <summary>
+            Represents the element at the 4th row and 4th column of this <see cref='T:Zebra.Drawing.Imaging.ColorMatrix'/>.
+            </summary>
+        </member>
+        <member name="M:Zebra.Drawing.Imaging.ColorMatrix.#ctor(System.Single[][])">
+            <summary>
+            Initializes a new instance of the <see cref='T:Zebra.Drawing.Imaging.ColorMatrix'/> class with the elements in the specified matrix.
+            </summary>
+        </member>
+        <member name="P:Zebra.Drawing.Imaging.ColorMatrix.Item(System.Int32,System.Int32)">
+            <summary>
+            Gets or sets the value of the specified element of this <see cref='T:Zebra.Drawing.Imaging.ColorMatrix'/>.
+            </summary>
+        </member>
+        <member name="T:Zebra.Drawing.Imaging.ColorPalette">
+            <summary>
+            Defines an array of colors that make up a color palette.
+            </summary>
+        </member>
+        <member name="P:Zebra.Drawing.Imaging.ColorPalette.Flags">
+            <summary>
+            Specifies how to interpret the color information in the array of colors.
+            </summary>
+        </member>
+        <member name="P:Zebra.Drawing.Imaging.ColorPalette.Entries">
+            <summary>
+            Specifies an array of <see cref='T:System.Drawing.Color'/> objects.
+            </summary>
+        </member>
+        <member name="P:Zebra.Drawing.Imaging.EncoderParameter.Encoder">
+            <summary>
+            Gets/Sets the Encoder for the EncoderPameter.
+            </summary>
+        </member>
+        <member name="P:Zebra.Drawing.Imaging.EncoderParameter.Type">
+            <summary>
+            Gets the EncoderParameterValueType object from the EncoderParameter.
+            </summary>
+        </member>
+        <member name="P:Zebra.Drawing.Imaging.EncoderParameter.ValueType">
+            <summary>
+            Gets the EncoderParameterValueType object from the EncoderParameter.
+            </summary>
+        </member>
+        <member name="P:Zebra.Drawing.Imaging.EncoderParameter.NumberOfValues">
+            <summary>
+            Gets the NumberOfValues from the EncoderParameter.
+            </summary>
+        </member>
+        <member name="M:Zebra.Drawing.Imaging.EncoderParameters.ConvertToMemory">
+             <summary>
+             Copy the EncoderParameters data into a chunk of memory to be consumed by native GDI+ code.
+            
+             We need to marshal the EncoderParameters info from/to native GDI+ ourselves since the definition of the managed/unmanaged classes
+             are different and the native class is a bit weird. The native EncoderParameters class is defined in GDI+ as follows:
+             
+             class EncoderParameters {
+                 UINT Count;                      // Number of parameters in this structure
+                 EncoderParameter Parameter[1];   // Parameter values
+             };
+            
+             We don't have the 'Count' field since the managed array contains it. In order for this structure to work with more than one
+             EncoderParameter we need to preallocate memory for the extra n-1 elements, something like this:
+            
+             EncoderParameters* pEncoderParameters = (EncoderParameters*) malloc(sizeof(EncoderParameters) + (n-1) * sizeof(EncoderParameter));
+            
+             Also, in 64-bit platforms, 'Count' is aligned in 8 bytes (4 extra padding bytes) so we use IntPtr instead of Int32 to account for
+             that.
+             </summary>
+        </member>
+        <member name="M:Zebra.Drawing.Imaging.EncoderParameters.ConvertFromMemory(System.IntPtr)">
+            <summary>
+            Copy the native GDI+ EncoderParameters data from a chunk of memory into a managed EncoderParameters object.
+            See ConvertToMemory for more info.
+            </summary>
+        </member>
+        <member name="M:Zebra.Drawing.Imaging.FrameDimension.#ctor(System.Guid)">
+            <summary>
+            Initializes a new instance of the <see cref='T:Zebra.Drawing.Imaging.FrameDimension'/> class with the specified GUID.
+            </summary>
+        </member>
+        <member name="P:Zebra.Drawing.Imaging.FrameDimension.Guid">
+            <summary>
+            Specifies a global unique identifier (GUID) that represents this <see cref='T:Zebra.Drawing.Imaging.FrameDimension'/>.
+            </summary>
+        </member>
+        <member name="P:Zebra.Drawing.Imaging.FrameDimension.Time">
+            <summary>
+            The time dimension.
+            </summary>
+        </member>
+        <member name="P:Zebra.Drawing.Imaging.FrameDimension.Resolution">
+            <summary>
+            The resolution dimension.
+            </summary>
+        </member>
+        <member name="P:Zebra.Drawing.Imaging.FrameDimension.Page">
+            <summary>
+            The page dimension.
+            </summary>
+        </member>
+        <member name="M:Zebra.Drawing.Imaging.FrameDimension.Equals(System.Object)">
+            <summary>
+            Returns a value indicating whether the specified object is an <see cref='T:Zebra.Drawing.Imaging.FrameDimension'/> equivalent to
+            this <see cref='T:Zebra.Drawing.Imaging.FrameDimension'/>.
+            </summary>
+        </member>
+        <member name="M:Zebra.Drawing.Imaging.FrameDimension.ToString">
+            <summary>
+            Converts this <see cref='T:Zebra.Drawing.Imaging.FrameDimension'/> to a human-readable string.
+            </summary>
+        </member>
+        <member name="M:Zebra.Drawing.Imaging.ImageAttributes.ClearColorMatrix">
+            <summary>
+            Clears the color matrix.
+            </summary>
+        </member>
+        <member name="M:Zebra.Drawing.Imaging.ImageAttributes.ClearGamma">
+            <summary>
+            Clears the gamma.
+            </summary>
+        </member>
+        <member name="M:Zebra.Drawing.Imaging.ImageAttributes.ClearGamma(System.Drawing.Imaging.ColorAdjustType)">
+            <summary>
+            Clears the gamma for the color adjust type.
+            </summary>
+            <param name="type">Type.</param>
+        </member>
+        <member name="M:Zebra.Drawing.Imaging.ImageAttributes.SetColorMatrix(Zebra.Drawing.Imaging.ColorMatrix)">
+            <summary>
+            Sets the color matrix with the ColorMatrixFlag.Default.
+            </summary>
+            <param name="newColorMatrix">New color matrix.</param>
+        </member>
+        <member name="M:Zebra.Drawing.Imaging.ImageAttributes.SetColorMatrix(Zebra.Drawing.Imaging.ColorMatrix,System.Drawing.Imaging.ColorMatrixFlag)">
+            <summary>
+            Sets the color matrix with specifed flagsß.
+            </summary>
+            <param name="newColorMatrix">New color matrix.</param>
+            <param name="flags">Flags.</param>
+        </member>
+        <member name="M:Zebra.Drawing.Imaging.ImageAttributes.SetGamma(System.Single)">
+            <summary>
+            Sets the gamma.
+            </summary>
+            <param name="gamma">Gamma.</param>
+        </member>
+        <member name="T:Zebra.Drawing.Imaging.PropertyItem">
+            <summary>
+            Encapsulates a metadata property to be included in an image file.
+            </summary>
+        </member>
+        <member name="P:Zebra.Drawing.Imaging.PropertyItem.Id">
+            <summary>
+            Represents the ID of the property.
+            </summary>
+        </member>
+        <member name="P:Zebra.Drawing.Imaging.PropertyItem.Len">
+            <summary>
+            Represents the length of the property.
+            </summary>
+        </member>
+        <member name="P:Zebra.Drawing.Imaging.PropertyItem.Type">
+            <summary>
+            Represents the type of the property.
+            </summary>
+        </member>
+        <member name="P:Zebra.Drawing.Imaging.PropertyItem.Value">
+            <summary>
+            Contains the property value.
+            </summary>
+        </member>
+        <member name="P:Zebra.Drawing.SafeNativeMethods.Gdip.Initialized">
+            <summary>
+            Returns true if GDI+ has been started, but not shut down
+            </summary>
+        </member>
+        <member name="P:Zebra.Drawing.SafeNativeMethods.Gdip.ThreadData">
+            <summary>
+            This property will give us back a hashtable we can use to store all of our static brushes and pens on
+            a per-thread basis. This way we can avoid 'object in use' crashes when different threads are
+            referencing the same drawing object.
+            </summary>
+        </member>
+        <member name="M:Zebra.Drawing.SafeNativeMethods.Gdip.Shutdown">
+            <summary>
+            Shutsdown GDI+
+            </summary>            
+        </member>
+        <member name="M:Zebra.Drawing.GeomUtilities.CreateGeometricTransform(System.Drawing.RectangleF,System.Drawing.PointF[])">
+            <summary>
+            This method initializes the new CGAffineTransform such that it represents the geometric transform that maps the rectangle 
+            specified by the rect parameter to the parallelogram defined by the three points in the plgpts parameter. 
+            
+            The upper-left corner of the rectangle is mapped to the first point in the plgpts array, the upper-right corner 
+            is mapped to the second point, and the lower-left corner is mapped to the third point. The lower-right point of 
+            the parallelogram is implied by the first three.
+            </summary>
+            <returns>The affine transform.</returns>
+            <param name="rect">Rectangle.</param>
+            <param name="points">Points.</param>
+        </member>
+        <member name="M:Zebra.Drawing.GeomUtilities.CreateGeometricTransform(System.Drawing.RectangleF,System.Drawing.Point[])">
+            <summary>
+            This method initializes the new CGAffineTransform such that it represents the geometric transform that maps the rectangle 
+            specified by the rect parameter to the parallelogram defined by the three points in the plgpts parameter. 
+            
+            The upper-left corner of the rectangle is mapped to the first point in the plgpts array, the upper-right corner 
+            is mapped to the second point, and the lower-left corner is mapped to the third point. The lower-right point of 
+            the parallelogram is implied by the first three.
+            </summary>
+            <returns>The affine transform.</returns>
+            <param name="rect">Rectangle.</param>
+            <param name="points">Points.</param>
+        </member>
+        <member name="M:Zebra.Drawing.GeomUtilities.CreateRotateFlipTransform(System.Int32@,System.Int32@,System.Single,System.Boolean,System.Boolean)">
+            <summary>
+            Creates the rotate flip transform given the input parameters
+            </summary>
+            <returns>The rotate flip transform.</returns>
+            <param name="width">Width.</param>
+            <param name="height">Height.</param>
+            <param name="angle">Angle.</param>
+            <param name="flipX">If set to <c>true</c> flip x.</param>
+            <param name="flipY">If set to <c>true</c> flip y.</param>
+        </member>
+        <member name="M:Zebra.Drawing.GeomUtilities.Transform(System.Drawing.RectangleF,Zebra.Drawing.Drawing2D.Matrix)">
+            <summary>
+            Transform the specified Rectangle by the matrix that is passed.
+            </summary>
+            <param name="rectangle"></param>
+            <param name="matrix">Matrix.</param>
+        </member>
+        <member name="M:Zebra.Drawing.Graphics.DrawImage(Zebra.Drawing.Image,System.Drawing.Rectangle,System.Int32,System.Int32,System.Int32,System.Int32,System.Drawing.GraphicsUnit)">
+            <summary>
+            Draws the specified portion of the specified Image at the specified location and with the specified size.
+            
+            The parameters srcX, srcY, srcWidth and srcHeight define the rectangular source portion of the image object 
+            to draw. This portion is scaled up or down (in the case where source rectangle overruns the bounds of the image)
+            to fit inside the rectangle specified by the destRect parameter.  
+            </summary>
+            <param name="image">Image.</param>
+            <param name="destRect">Destination rect.</param>
+            <param name="srcX">Source x.</param>
+            <param name="srcY">Source y.</param>
+            <param name="srcWidth">Source width.</param>
+            <param name="srcHeight">Source height.</param>
+            <param name="srcUnit">Source unit.</param>
+        </member>
+        <member name="M:Zebra.Drawing.Graphics.DrawImage(Zebra.Drawing.Image,System.Drawing.Rectangle,System.Drawing.Rectangle,System.Drawing.GraphicsUnit)">
+            <summary>
+            Draws the specified portion of the specified Image at the specified location and with the specified size.
+            
+            The srcRect parameter specifies a rectangular portion of the image object to draw. This portion is scaled 
+            to fit inside the rectangle specified by the destRect parameter.
+            </summary>
+            <param name="image">Image.</param>
+            <param name="destRect">Destination rect.</param>
+            <param name="srcRect">Source rect.</param>
+            <param name="srcUnit">Source unit.</param>
+        </member>
+        <member name="M:Zebra.Drawing.Graphics.DrawImage(Zebra.Drawing.Image,System.Drawing.RectangleF,System.Drawing.RectangleF,System.Drawing.GraphicsUnit)">
+            <summary>
+            Draws the specified portion of the specified Image at the specified location and with the specified size.
+            
+            The srcRect parameter specifies a rectangular portion of the image object to draw. This portion is scaled 
+            up or down (in the case where source rectangle overruns the bounds of the image) to fit inside the rectangle 
+            specified by the destRect parameter.  
+            </summary>
+            <param name="image">Image.</param>
+            <param name="destRect">Destination rect.</param>
+            <param name="srcRect">Source rect.</param>
+            <param name="srcUnit">Source unit.</param>
+        </member>
+        <member name="M:Zebra.Drawing.Graphics.DrawImage(Zebra.Drawing.Image,System.Drawing.RectangleF)">
+            <summary>
+            Draws the specified Image at the specified location and with the specified size.
+            </summary>
+            <param name="image">Image.</param>
+            <param name="rect">Rect.</param>
+        </member>
+        <member name="P:Zebra.Drawing.Graphics.InterpolationMode">
+            <summary>
+            Gets or sets the interpolation mode.  The interpolation mode determines how intermediate values between two endpoints are calculated.
+            </summary>
+            <value>The interpolation mode.</value>
+        </member>
+        <member name="P:Zebra.Drawing.Image.HorizontalResolution">
+            <summary>
+            Gets the horizontal resolution, in pixels per inch, of this Image.
+            </summary>
+            <value>The horizontal resolution.</value>
+        </member>
+        <member name="P:Zebra.Drawing.Image.VerticalResolution">
+            <summary>
+            Gets the vertical resolution, in pixels per inch, of this Image.
+            </summary>
+            <value>The vertical resolution.</value>
+        </member>
+        <member name="P:Zebra.Drawing.Image.Flags">
+            <summary>
+            Gets the attribute pixel flags representing the image data.
+            </summary>
+            <value>The bitwise integer of the ImageFlags combinations.</value>
+        </member>
+        <member name="P:Zebra.Drawing.Image.PhysicalDimension">
+            <summary>
+            Gets the width and height of this image.
+            </summary>
+            <value>A SizeF structure that represents the width and height of this Image.</value>
+        </member>
+        <member name="M:Zebra.Drawing.Image.Clone">
+            <summary>
+            Creates an exact copy of this Image.
+            </summary>
+        </member>
+        <member name="M:Zebra.Drawing.Image.GetBounds(System.Drawing.GraphicsUnit@)">
+            <summary>
+            Gets the bounds of the image in the GraphicUnit variable passed.
+            
+            This does not convert the bound into the GraphicsUnit passed but
+            will tell you what the bounds are based on the unit that is provided
+            on its return in the referenced pageUnit variable.
+            </summary>
+            <returns>The bounds.</returns>
+            <param name="pageUnit">Page unit.</param>
+        </member>
+        <member name="M:Zebra.Drawing.Image.RotateFlip(System.Drawing.RotateFlipType)">
+            <summary>
+            Rotates and or flips the image base on the RotateFlipTyp value passed.
+            </summary>
+            <param name="rotateFlipType">Rotate flip type.</param>
+        </member>
+        <member name="M:Zebra.Drawing.Image.GetPixelFormatSize(System.Drawing.Imaging.PixelFormat)">
+            <summary>
+            Gets the size of the pixel format in number of bits per pixel.
+            </summary>
+            <returns>The pixel format size.</returns>
+            <param name="pixfmt">Pixfmt.</param>
+        </member>
+        <member name="M:Zebra.Drawing.Image.IsAlphaPixelFormat(System.Drawing.Imaging.PixelFormat)">
+            <summary>
+            Determines whether the pixelFormat passed contains alpha information.
+            </summary>
+            <returns><c>true</c> if the pixelFormat contain alpha information; otherwise, <c>false</c>.</returns>
+            <param name="pixfmt">Pixel format.</param>
+        </member>
+        <member name="M:Zebra.Drawing.Image.GetBitsPerPixel(System.Drawing.Imaging.PixelFormat)">
+            <summary>
+            Gets the number of components for the pixel format.
+            </summary>
+            <returns>The format components.</returns>
+            <param name="pixfmt">Pixfmt.</param>
+        </member>
+        <member name="T:Zebra.Drawing.ImageConverter">
+            <summary>
+            Summary description for ImageConverter.
+            </summary>
+        </member>
+        <member name="T:Zebra.Drawing.ImageFormatConverter">
+            <summary>
+            Summary description for ImageFormatConverter.
+            </summary>
+        </member>
+    </members>
+</doc>
